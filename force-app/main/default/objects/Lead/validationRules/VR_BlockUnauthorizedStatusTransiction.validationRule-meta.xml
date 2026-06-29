@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_BlockUnauthorizedStatusTransiction</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Status, &apos;EmQualificacao&apos;),
+ ISPICKVAL(PRIORVALUE(Status), &apos;Novo&apos;),
+ NOT( $Permission.CP_LeadQualificationTransiction ),
+ NOT($Setup.BypassSettings__c.Enabled__c )
+)</errorConditionFormula>
+    <errorMessage>Você não possui permissão para alterar o status para &quot;Em qualificação&quot;.</errorMessage>
+</ValidationRule>

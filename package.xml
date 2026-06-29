@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>BypassController</members>
+        <members>BypassHandler</members>
+        <members>BypassService</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>BypassSettings__c.Enabled__c</members>
+        <members>Lead.OrcamentoDisponivel__c</members>
+        <members>Lead.ProdutoInteresse__c</members>
+        <members>Lead.ResultadoPrimeiroContato__c</members>
+        <members>Lead.Status</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>BypassSettings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>CP_LeadQualificationTransiction</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>PS_LeadAdminAccess</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Lead.VR_BlockUnauthorizedStatusTransiction</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>65.0</version>
+</Package>
