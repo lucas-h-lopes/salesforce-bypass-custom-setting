@@ -22,7 +22,7 @@ Utilizando um **Custom Setting** hierárquico, é possível criar um objeto cust
 
 Cada registro de uma hierárquia de custom setting possui um nível de acesso, podendo ser definido um estado para todos os usuários de um determinado perfil, ou para cada usuário em específico. O serviço Apex BypassService procura por um bypass já existente com base no Id da sessão do usuário autenticado através da instrução `BypassSettings__c bypass = BypassSettings__c.getValues(UserInfo.getUserId());`, posteriormente inserindo um registro apto para bypass (Enabled__c=true) caso não encontrado, ou atualizando o valor do campo do registro existente para verdadeiro. Entre o liga e desliga do bypass, o método realiza um upsert no registro recebido pelo argumento, garantindo que a condição de bloqueio da Validation Rule não seja satisfeita naquela transação.
 
-Criado esse custom setting, voltamos à Validation Rule VR_BlockUnauthorizedStatusTransiction para adicionarmos uma linha cuja responsabilidade é: garantir que o erro só vai acontecer se durante a operação não existir um registro de bypass associado ao usuário da transação com valor igual a falso. A atualização da regra pode ser visualizada abaixo.
+Criado esse custom setting, voltamos à Validation Rule VR_BlockUnauthorizedStatusTransiction para adicionarmos uma linha cuja responsabilidade é: garantir que o erro só vai acontecer se durante a operação não existir um registro de bypass associado ao usuário da transação com valor igual a verdadeiro. A atualização da regra pode ser visualizada abaixo.
 
 ```
 //NOVA VALIDATION
